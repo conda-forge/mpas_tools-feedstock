@@ -1,5 +1,5 @@
 {% set name = "mpas_tools" %}
-{% set version = "0.0.2" %}
+{% set version = "0.0.3" %}
 
 package:
   name: '{{ name|lower }}'
@@ -7,14 +7,16 @@ package:
 
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/{{ version }}.tar.gz
-  sha256: 45c733ef63c99f2b7d61f5a76524acc38c8a2376a379aec6a8ad44ea21c3d8fc
+  sha256: 38f20237193fc74473cbd9259f2921f945a8da836f76616c70451e55edffa656
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   entry_points:
     - planar_hex = mpas_tools.planar_hex:main
     - translate_planar_grid = mpas_tools.translate:main
+    - merge_grids = mpas_tools.merge_grids:main
+    - split_grids = mpas_tools.split_grids:main
 
 requirements:
   build:
@@ -26,6 +28,7 @@ requirements:
     - libnetcdf
     - setuptools
     - pip
+    - netcdf4
     - openmp  # [osx]
   run:
     - python
@@ -70,6 +73,8 @@ test:
     - widen_transect_edge_masks.py --help
     - add_critical_land_blockages_to_mask.py --help
     - paraview_vtk_field_extractor.py -f mesh_tools/mesh_conversion_tools/test/mesh.QU.1920km.151026.nc -v latCell,lonCell --ignore_time -o vtk_test
+    - split_grids --help
+    - merge_grids --help
 
 about:
   home: https://github.com/MPAS-Dev/MPAS-Tools/
