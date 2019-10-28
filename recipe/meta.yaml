@@ -10,7 +10,7 @@ source:
   sha256: 2fd0681d1cc7ed2fcabdbf4602f70c0f8fb31bda6d804dffe1d48ec6cc48cf06
 
 build:
-  number: 0
+  number: 100
   skip: true  # [win]
   entry_points:
     - planar_hex = mpas_tools.planar_hex:main
@@ -25,7 +25,7 @@ requirements:
   host:
     - python
     - hdf5
-    - libnetcdf
+    - libnetcdf 4.6.2
     - setuptools
     - pip
     - netcdf4
@@ -34,7 +34,7 @@ requirements:
     - python
     - netcdf4
     - hdf5
-    - libnetcdf
+    - libnetcdf 4.6.2
     - numpy
     - scipy
     - xarray
