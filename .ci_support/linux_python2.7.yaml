@@ -13,8 +13,6 @@ hdf5:
 libnetcdf:
 - 4.7.3
 pin_run_as_build:
-  libnetcdf:
-    max_pin: x.x.x
   python:
     min_pin: x.x
     max_pin: x.x
