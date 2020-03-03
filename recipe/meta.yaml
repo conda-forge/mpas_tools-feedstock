@@ -1,13 +1,13 @@
 {% set name = "mpas_tools" %}
-{% set version = "0.0.7" %}
+{% set version = "0.0.8" %}
 
 package:
-  name: '{{ name|lower }}'
-  version: '{{ version }}'
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/{{ version }}.tar.gz
-  sha256: cb7fe24da3bf956ce0fcfc5027c5f4cc3631a66f887d435539c9ae8ed8756775
+  sha256: 176cea2aed63bcc0e8bad1ed5a8bfc0f875a69978a93d683049f68455549cb8c
 
 build:
   number: 0
@@ -87,8 +87,8 @@ about:
   description: |
     A set of tools for creating and manipulating meshes for the climate
     components based on the Model for Prediction Across Scales (MPAS) framework
-  doc_url: 'https://github.com/MPAS-Dev/MPAS-Tools/README.md'
-  dev_url: 'https://github.com/MPAS-Dev/MPAS-Tools/'
+  doc_url: https://github.com/MPAS-Dev/MPAS-Tools/README.md
+  dev_url: https://github.com/MPAS-Dev/MPAS-Tools/
 
 extra:
   recipe-maintainers:
