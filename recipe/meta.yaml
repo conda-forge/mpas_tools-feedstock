@@ -10,7 +10,7 @@ source:
   sha256: d805aaae67121f4e000d6b0581ad5cbb557a3c9e93e6de89b8675aeda79bd5a3
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   entry_points:
     - planar_hex = mpas_tools.planar_hex:main
@@ -57,6 +57,7 @@ requirements:
     - pyamg
     - rasterio
     - affine
+    - pyproj
 
 test:
   requires:
