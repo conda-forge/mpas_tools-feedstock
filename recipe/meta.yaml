@@ -57,6 +57,7 @@ requirements:
     - pyamg
     - rasterio
     - affine
+    - pyproj
 
 test:
   requires:
