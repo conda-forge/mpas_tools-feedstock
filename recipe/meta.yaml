@@ -26,7 +26,7 @@ build:
     - ocean_add_depth = mpas_tools.ocean.depth:main_add_depth
     - ocean_add_zmid = mpas_tools.ocean.depth:main_add_zmid
     - ocean_write_time_varying_zmid = mpas_tools.ocean.depth:main_write_time_varying_zmid
-
+    
 requirements:
   build:
     - {{ compiler('cxx') }}
@@ -50,7 +50,7 @@ requirements:
     - scipy
     - xarray
     - dask
-    - geometric_features
+    - geometric_features >=0.1.12
     - pyevtk
     - future
     - jigsaw >=0.9.12
