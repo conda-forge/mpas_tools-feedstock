@@ -1,5 +1,5 @@
 {% set name = "mpas_tools" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/{{ version }}.tar.gz
-  sha256: f4aa3115a5af68f80f126382b574f906cc07dae043b4b5cfa0cad95b97d5bfd5
+  sha256: 7d10a34d26f3d2a024bc1b844e0656e591d20a1e8550a44823706a7bff2cff80
 
 build:
   number: 0
@@ -26,7 +26,7 @@ build:
     - ocean_add_depth = mpas_tools.ocean.depth:main_add_depth
     - ocean_add_zmid = mpas_tools.ocean.depth:main_add_zmid
     - ocean_write_time_varying_zmid = mpas_tools.ocean.depth:main_write_time_varying_zmid
-    
+
 requirements:
   build:
     - {{ compiler('cxx') }}
@@ -52,7 +52,6 @@ requirements:
     - dask
     - geometric_features >=0.1.12
     - pyevtk
-    - future
     - jigsaw >=0.9.12
     - jigsawpy >=0.2.1
     - pyflann
@@ -62,6 +61,9 @@ requirements:
     - rasterio
     - affine
     - pyproj
+    - matplotlib-base
+    - shapely
+    - progressbar2
 
 test:
   requires:
