@@ -62,6 +62,9 @@ requirements:
     - rasterio
     - affine
     - pyproj
+    - matplotlib-base
+    - shapely
+    - progressbar2
 
 test:
   requires:
