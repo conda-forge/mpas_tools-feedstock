@@ -1,5 +1,5 @@
 {% set name = "mpas_tools" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/{{ version }}.tar.gz
-  sha256: 5b18d8fb79bcbdf59440e7a8b6c3e9b10fed392fc660068e38e8a778466cfba1
+  sha256: ee0832bacc07e7db82d4307713f1cf06791d4bd35e177765e6e3b31764546176
 
 build:
   number: 0
@@ -64,6 +64,7 @@ requirements:
     - pyevtk
     - pyflann
     - pyproj
+    - python-igraph
     - rasterio
     - scikit-image
     - scipy
