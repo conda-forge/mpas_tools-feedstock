@@ -1,5 +1,5 @@
 {% set name = "mpas_tools" %}
-{% set version = "0.10.0" %}
+{% set version = "0.11.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/{{ version }}.tar.gz
-  sha256: 80f7a5a1427928e8d8d5d5ba948158ad0f24874bacb88e736973e5c072997cd4
+  sha256: 3e415aa9288a70a91b876ca2dc2cba7a59b3606049657362991259a4919706a9
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win or py<37]
   entry_points:
     - planar_hex = mpas_tools.planar_hex:main
@@ -62,7 +62,6 @@ requirements:
     - progressbar2
     - pyamg
     - pyevtk
-    - pyflann
     - pyproj
     - python-igraph
     - scikit-image
