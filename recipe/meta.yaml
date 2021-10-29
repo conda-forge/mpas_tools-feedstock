@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/{{ version }}.tar.gz
   sha256: 3e415aa9288a70a91b876ca2dc2cba7a59b3606049657362991259a4919706a9
+  patches:
+    - 0001-rename-igraph-in-setup.patch
 
 build:
   number: 2
