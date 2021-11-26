@@ -1,5 +1,5 @@
 {% set name = "mpas_tools" %}
-{% set version = "0.11.0" %}
+{% set version = "0.12.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,11 @@ package:
 
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/{{ version }}.tar.gz
-  sha256: 3e415aa9288a70a91b876ca2dc2cba7a59b3606049657362991259a4919706a9
-  patches:
-    - 0001-rename-igraph-in-setup.patch
+  sha256: 47077c1e12df382cc4572ef2b77b0c5bdd0e2bcd42c6fb16c24ddc3da73abd82
 
 build:
-  number: 2
-  skip: true  # [win or py<37]
+  number: 0
+  skip: true  # [win]
   entry_points:
     - planar_hex = mpas_tools.planar_hex:main
     - translate_planar_grid = mpas_tools.translate:main
@@ -104,6 +102,7 @@ test:
     - set_lat_lon_fields_in_planar_grid.py --help
     - create_SCRIP_file_from_MPAS_mesh.py --help
     - create_landice_grid_from_generic_MPAS_grid.py --help
+    - create_SCRIP_file_from_planar_rectangular_grid.py --help
     - define_cullMask.py --help
     - interpolate_to_mpasli_grid.py --help
     - mark_domain_boundaries_dirichlet.py --help
