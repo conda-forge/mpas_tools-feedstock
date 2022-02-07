@@ -1,5 +1,5 @@
 {% set name = "mpas_tools" %}
-{% set version = "0.12.0" %}
+{% set version = "0.13.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/{{ version }}.tar.gz
-  sha256: 47077c1e12df382cc4572ef2b77b0c5bdd0e2bcd42c6fb16c24ddc3da73abd82
+  sha256: c3a2cd5a484aa7e8d217b306c8b378c2f5464e4a6a477015a7b789b49a63c07d
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   entry_points:
     - planar_hex = mpas_tools.planar_hex:main
