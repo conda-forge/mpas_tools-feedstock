@@ -12,7 +12,7 @@ ${PYTHON} -m pip install . --no-deps -vv
 cd ${SRC_DIR}/conda_package/mesh_tools/seaice_grid_tools
 mkdir build
 cd build
-cmake \
+cmake ${CMAKE_ARGS} \
   -D CMAKE_INSTALL_PREFIX=${PREFIX} \
   -D CMAKE_BUILD_TYPE=Release \
   ..
