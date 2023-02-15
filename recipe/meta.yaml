@@ -35,6 +35,8 @@ build:
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
     - cmake
@@ -51,7 +53,7 @@ requirements:
     - setuptools
     - pip
     - netcdf4
-    - openmp  # [osx]
+    - llvm-openmp  # [osx]
   run:
     - python
     - cartopy
@@ -95,6 +97,7 @@ test:
     - mpas_tools.conversion
   commands:
     - pip check
+    {% if build_platform == target_platform %}
     - planar_hex --nx=10 --ny=20 --dc=1000. --outFileName='periodic_mesh_10x20_1km.nc'
     - translate_planar_grid -f 'periodic_mesh_10x20_1km.nc' -x 1000. -y 2000.
     - translate_planar_grid -f 'periodic_mesh_10x20_1km.nc' -c
@@ -137,6 +140,7 @@ test:
     - compute_mpas_transect_masks --help
     - compute_mpas_flood_fill_mask --help
     - compute_lon_lat_region_masks --help
+    {% endif %}
 
 about:
   home: https://github.com/MPAS-Dev/MPAS-Tools/
