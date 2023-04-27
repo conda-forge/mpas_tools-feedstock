@@ -13,9 +13,9 @@ fortran_compiler:
 fortran_compiler_version:
 - '12'
 hdf5:
-- 1.12.2
+- 1.14.0
 libnetcdf:
-- 4.8.1
+- 4.9.2
 llvm_openmp:
 - '15'
 macos_machine:
