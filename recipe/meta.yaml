@@ -1,5 +1,5 @@
 {% set name = "mpas_tools" %}
-{% set version = "0.19.0" %}
+{% set version = "0.20.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/{{ version }}.tar.gz
-  sha256: b297c72ce6dd0d1a646f3e6c519d813d8eaa5f2107c021e92abd2b567c0c50b7
+  sha256: 5ba0c70dbfca698aedc95e388c0a2b2226434100b766b0458e4462129f38c0b0
 
 build:
-  number: 4
+  number: 0
   skip: true  # [win]
   entry_points:
     - planar_hex = mpas_tools.planar_hex:main
@@ -26,12 +26,14 @@ build:
     - ocean_add_depth = mpas_tools.ocean.depth:main_add_depth
     - ocean_add_zmid = mpas_tools.ocean.depth:main_add_zmid
     - ocean_write_time_varying_zmid = mpas_tools.ocean.depth:main_write_time_varying_zmid
+    - plot_ocean_transects = mpas_tools.ocean.viz.transects:main
     - compute_mpas_region_masks = mpas_tools.mesh.mask:entry_point_compute_mpas_region_masks
     - compute_mpas_transect_masks = mpas_tools.mesh.mask:entry_point_compute_mpas_transect_masks
     - compute_mpas_flood_fill_mask = mpas_tools.mesh.mask:entry_point_compute_mpas_flood_fill_mask
     - compute_lon_lat_region_masks = mpas_tools.mesh.mask:entry_point_compute_lon_lat_region_masks
     - prepare_seaice_partitions = mpas_tools.seaice.partition:prepare_partitions
     - create_seaice_partitions = mpas_tools.seaice.partition:create_partitions
+    - simple_seaice_partitions = mpas_tools.seaice.partition:simple_partitions
 
 requirements:
   build:
@@ -57,6 +59,7 @@ requirements:
   run:
     - python
     - cartopy
+    - cmocean
     - dask
     - geometric_features >=1.0.1,<2.0.0
     - hdf5
