@@ -1,5 +1,5 @@
 {% set name = "mpas_tools" %}
-{% set version = "0.20.0" %}
+{% set version = "0.21.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/{{ version }}.tar.gz
-  sha256: 5ba0c70dbfca698aedc95e388c0a2b2226434100b766b0458e4462129f38c0b0
+  sha256: ec29ff4c29766b6edddd39c0ef44b21432ba22bc81465f7d2d9dbd1ccfe88151
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   entry_points:
     - planar_hex = mpas_tools.planar_hex:main
@@ -31,6 +31,7 @@ build:
     - compute_mpas_transect_masks = mpas_tools.mesh.mask:entry_point_compute_mpas_transect_masks
     - compute_mpas_flood_fill_mask = mpas_tools.mesh.mask:entry_point_compute_mpas_flood_fill_mask
     - compute_lon_lat_region_masks = mpas_tools.mesh.mask:entry_point_compute_lon_lat_region_masks
+    - compute_projection_region_masks = mpas_tools.mesh.mask:entry_point_compute_projection_grid_region_masks
     - prepare_seaice_partitions = mpas_tools.seaice.partition:prepare_partitions
     - create_seaice_partitions = mpas_tools.seaice.partition:create_partitions
     - simple_seaice_partitions = mpas_tools.seaice.partition:simple_partitions
