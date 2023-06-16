@@ -77,7 +77,8 @@ requirements:
     - pyamg
     - pyevtk
     - pyproj
-    - python-igraph
+    # older python-igraph is giving me build troubles
+    - python-igraph >=0.10.0
     - scikit-image
     - scipy
     - shapely >=2.0,<3.0
