@@ -10,7 +10,7 @@ source:
   sha256: ec29ff4c29766b6edddd39c0ef44b21432ba22bc81465f7d2d9dbd1ccfe88151
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   entry_points:
     - planar_hex = mpas_tools.planar_hex:main
@@ -72,7 +72,8 @@ requirements:
     - matplotlib-base
     - netcdf-fortran
     - netcdf4
-    - numpy
+    # constraint because of incorrect scipy pinning
+    - numpy >=1.19,<1.25.0
     - progressbar2
     - pyamg
     - pyevtk
