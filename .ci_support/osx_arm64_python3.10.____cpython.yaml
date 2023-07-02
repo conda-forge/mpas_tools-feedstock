@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 channel_sources:
 - conda-forge
 channel_targets:
-- conda-forge main
+- conda-forge mpas_tools_dev
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
@@ -13,7 +13,7 @@ fortran_compiler:
 fortran_compiler_version:
 - '12'
 hdf5:
-- 1.14.0
+- 1.14.1
 libnetcdf:
 - 4.9.2
 llvm_openmp:
