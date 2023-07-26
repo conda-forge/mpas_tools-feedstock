@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/{{ version }}.tar.gz
   sha256: c289ea4ff7cb3e9e4ee03cd4ecf26da3feeb1a93b0f8d0fcd084ef3365549ba3
+  patches:
+    - 0001-sort-mesh-entry-point.patch
 
 build:
   number: 0
