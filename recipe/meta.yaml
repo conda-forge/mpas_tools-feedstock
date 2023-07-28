@@ -12,7 +12,7 @@ source:
     - 0001-sort-mesh-entry-point.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   entry_points:
     - planar_hex = mpas_tools.planar_hex:main
