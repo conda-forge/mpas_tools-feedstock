@@ -1,5 +1,5 @@
 {% set name = "mpas_tools" %}
-{% set version = "0.22.0rc3" %}
+{% set version = "0.22.0rc4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/{{ version }}.tar.gz
-  sha256: 1ad654075a8d42167e27f8ae511afb551bd7b6d15cc8d815bd2e518fcd2ac58e
+  sha256: b78327e81aaac92c21b6bd87e208ac32b909fd8857bcaecd14226794eecde594
 
 build:
   number: 0
