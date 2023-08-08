@@ -1,5 +1,5 @@
 {% set name = "mpas_tools" %}
-{% set version = "0.21.0" %}
+{% set version = "0.22.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/{{ version }}.tar.gz
-  sha256: ec29ff4c29766b6edddd39c0ef44b21432ba22bc81465f7d2d9dbd1ccfe88151
+  sha256: 90c56cab3bd8084cd63c9307d9833591d61ef801d68112344115775bd14acf32
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   entry_points:
     - planar_hex = mpas_tools.planar_hex:main
@@ -35,6 +35,7 @@ build:
     - prepare_seaice_partitions = mpas_tools.seaice.partition:prepare_partitions
     - create_seaice_partitions = mpas_tools.seaice.partition:create_partitions
     - simple_seaice_partitions = mpas_tools.seaice.partition:simple_partitions
+    - sort_mesh = mpas_tools.mesh.creation.sort_mesh:main
 
 requirements:
   build:
@@ -110,8 +111,10 @@ test:
     - planar_hex --nx=20 --ny=40 --dc=1000. --outFileName='periodic_mesh_20x40_1km.nc'
     - translate_planar_grid -f 'periodic_mesh_10x20_1km.nc' -d 'periodic_mesh_20x40_1km.nc'
     - MpasMeshConverter.x mesh_tools/mesh_conversion_tools/test/mesh.QU.1920km.151026.nc mesh.nc
+    - sort_mesh --mesh-file mesh.nc --sort-file sorted_mesh.nc
     - MpasCellCuller.x mesh.nc culled_mesh.nc -m mesh_tools/mesh_conversion_tools/test/land_mask_final.nc
-    - MpasMaskCreator.x mesh.nc arctic_mask.nc -f mesh_tools/mesh_conversion_tools/test/Arctic_Ocean.geojson
+    # This tool has not been ported along with the other mesh conversion tools
+    # - MpasMaskCreator.x mesh.nc arctic_mask.nc -f mesh_tools/mesh_conversion_tools/test/Arctic_Ocean.geojson
     - planar_hex --nx=30 --ny=20 --dc=1000. --npx --npy --outFileName='nonperiodic_mesh_30x20_1km.nc'
     - MpasCellCuller.x nonperiodic_mesh_30x20_1km.nc culled_nonperiodic_mesh_30x20_1km.nc
     - python -m pytest conda_package/mpas_tools/tests
