@@ -74,7 +74,7 @@ requirements:
     - netcdf-fortran
     - netcdf4
     # constraint because of incorrect scipy pinning
-    - numpy >=1.19,<1.25.0
+    - numpy
     - progressbar2
     - pyamg
     - pyevtk
