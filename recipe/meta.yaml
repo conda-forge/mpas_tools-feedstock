@@ -73,7 +73,6 @@ requirements:
     - matplotlib-base
     - netcdf-fortran
     - netcdf4
-    # constraint because of incorrect scipy pinning
     - numpy
     - progressbar2
     - pyamg
