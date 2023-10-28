@@ -1,5 +1,5 @@
 {% set name = "mpas_tools" %}
-{% set version = "0.26.0" %}
+{% set version = "0.27.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/{{ version }}.tar.gz
-  sha256: 234cc9c86b9b294ef3ca5570bf6b1ac5718ff9cf12ace2d3966b6d62915cb840
+  sha256: 486a0e900c2c0bc5f12f6a822760b5a0e13f6274e1151f0f2d41e759f14d20f3
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   entry_points:
     - planar_hex = mpas_tools.planar_hex:main
@@ -64,14 +64,11 @@ requirements:
     - cmocean
     - dask
     - geometric_features >=1.0.1,<2.0.0
-    - hdf5
     - importlib_resources  # [py<=38]
     - inpoly
     - jigsaw >=0.9.12
     - jigsawpy >=0.2.1
-    - libnetcdf
     - matplotlib-base
-    - netcdf-fortran
     - netcdf4
     - numpy
     - progressbar2
@@ -112,8 +109,7 @@ test:
     - MpasMeshConverter.x mesh_tools/mesh_conversion_tools/test/mesh.QU.1920km.151026.nc mesh.nc
     - sort_mesh --mesh-file mesh.nc --sort-file sorted_mesh.nc
     - MpasCellCuller.x mesh.nc culled_mesh.nc -m mesh_tools/mesh_conversion_tools/test/land_mask_final.nc
-    # This tool has not been ported along with the other mesh conversion tools
-    # - MpasMaskCreator.x mesh.nc arctic_mask.nc -f mesh_tools/mesh_conversion_tools/test/Arctic_Ocean.geojson
+    - MpasMaskCreator.x mesh.nc arctic_mask.nc -f mesh_tools/mesh_conversion_tools/test/Arctic_Ocean.geojson
     - planar_hex --nx=30 --ny=20 --dc=1000. --npx --npy --outFileName='nonperiodic_mesh_30x20_1km.nc'
     - MpasCellCuller.x nonperiodic_mesh_30x20_1km.nc culled_nonperiodic_mesh_30x20_1km.nc
     - python -m pytest conda_package/mpas_tools/tests
