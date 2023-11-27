@@ -10,7 +10,7 @@ source:
   sha256: 118df5ea99f5b5aa0df7c6ce619549cd64b7e9557dcdbbeb7993c099eebb3ee1
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   entry_points:
     - planar_hex = mpas_tools.planar_hex:main
@@ -100,6 +100,8 @@ test:
     - mpas_tools.conversion
   commands:
     - pip check
+    - test -f "${PREFIX}/bin/ocean_smooth_topo_skip_land_ice"
+    - test -f "${PREFIX}/bin/ocean_smooth_topo_before_init"
     {% if build_platform == target_platform %}
     - planar_hex --nx=10 --ny=20 --dc=1000. --outFileName='periodic_mesh_10x20_1km.nc'
     - translate_planar_grid -f 'periodic_mesh_10x20_1km.nc' -x 1000. -y 2000.
