@@ -1,5 +1,5 @@
 {% set name = "mpas_tools" %}
-{% set version = "0.22.0rc5" %}
+{% set version = "0.30.0rc1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/{{ version }}.tar.gz
-  sha256: f35532c6bc6bfb9bb8638efad97ceab865e58aceebf4d0466da32d05a08bac6d
+  sha256: 3911c5e5de36f4f6858320f334ee7780e32ae7024932bb58e78035fc7bfa3cec
 
 build:
   number: 0
@@ -64,17 +64,13 @@ requirements:
     - cmocean
     - dask
     - geometric_features >=1.0.1,<2.0.0
-    - hdf5
     - importlib_resources  # [py<=38]
     - inpoly
     - jigsaw >=0.9.12
     - jigsawpy >=0.2.1
-    - libnetcdf
     - matplotlib-base
-    - netcdf-fortran
     - netcdf4
-    # constraint because of incorrect scipy pinning
-    - numpy >=1.19,<1.25.0
+    - numpy
     - progressbar2
     - pyamg
     - pyevtk
@@ -104,6 +100,9 @@ test:
     - mpas_tools.conversion
   commands:
     - pip check
+    - test -f "${PREFIX}/bin/ocean_smooth_topo_skip_land_ice"
+    - test -f "${PREFIX}/bin/ocean_smooth_topo_before_init"
+    - test -f "${PREFIX}/bin/ocean_smooth_topo_before_init_skip_land_ice"
     {% if build_platform == target_platform %}
     - planar_hex --nx=10 --ny=20 --dc=1000. --outFileName='periodic_mesh_10x20_1km.nc'
     - translate_planar_grid -f 'periodic_mesh_10x20_1km.nc' -x 1000. -y 2000.
@@ -113,8 +112,7 @@ test:
     - MpasMeshConverter.x mesh_tools/mesh_conversion_tools/test/mesh.QU.1920km.151026.nc mesh.nc
     - sort_mesh --mesh-file mesh.nc --sort-file sorted_mesh.nc
     - MpasCellCuller.x mesh.nc culled_mesh.nc -m mesh_tools/mesh_conversion_tools/test/land_mask_final.nc
-    # This tool has not been ported along with the other mesh conversion tools
-    # - MpasMaskCreator.x mesh.nc arctic_mask.nc -f mesh_tools/mesh_conversion_tools/test/Arctic_Ocean.geojson
+    - MpasMaskCreator.x mesh.nc arctic_mask.nc -f mesh_tools/mesh_conversion_tools/test/Arctic_Ocean.geojson
     - planar_hex --nx=30 --ny=20 --dc=1000. --npx --npy --outFileName='nonperiodic_mesh_30x20_1km.nc'
     - MpasCellCuller.x nonperiodic_mesh_30x20_1km.nc culled_nonperiodic_mesh_30x20_1km.nc
     - python -m pytest conda_package/mpas_tools/tests
