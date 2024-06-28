@@ -1,5 +1,5 @@
 {% set name = "mpas_tools" %}
-{% set version = "0.34.0rc1" %}
+{% set version = "0.34.0rc2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/{{ version }}.tar.gz
-  sha256: 2350876a9ffab438a5a4f6d6b5077ea48f3a2844461b3ff6849b48d7648017c5
+  sha256: fb60f0923eecd4518a2bb60b43488619ae7e7afc53f8044e00d1770c9dfa2e7e
 
 build:
   number: 0
@@ -70,7 +70,7 @@ requirements:
     - jigsawpy >=0.2.1
     - matplotlib-base
     - netcdf4
-    - numpy
+    - numpy >=2.0,<3.0
     - progressbar2
     - pyamg
     - pyevtk
