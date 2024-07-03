@@ -1,5 +1,5 @@
 {% set name = "mpas_tools" %}
-{% set version = "0.33.0" %}
+{% set version = "0.34.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/{{ version }}.tar.gz
-  sha256: 5aa9eaa544a290b62ed0e9c2dd8e755c1de7856d629088a0eed6c7e167b6dccf
+  sha256: 519dd591abb5e956dffe882fa7168e96bf1a39056679198b0231ffd75ed2aab1
 
 build:
   number: 0
-  skip: true  # [win]
+  skip: true  # [win or ppc64le or py<39]
   entry_points:
     - planar_hex = mpas_tools.planar_hex:main
     - translate_planar_grid = mpas_tools.translate:main
@@ -43,6 +43,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
+    - {{ stdlib('c') }}
     - cmake
     - make
     - pkgconfig
@@ -64,13 +65,12 @@ requirements:
     - cmocean
     - dask
     - geometric_features >=1.0.1,<2.0.0
-    - importlib_resources  # [py<=38]
     - inpoly
     - jigsaw >=0.9.12
     - jigsawpy >=0.2.1
     - matplotlib-base
     - netcdf4
-    - numpy
+    - numpy >=2.0,<3.0
     - progressbar2
     - pyamg
     - pyevtk
