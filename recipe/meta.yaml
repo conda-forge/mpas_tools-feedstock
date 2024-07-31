@@ -10,8 +10,8 @@ source:
   sha256: a9cfabf9da40cca95177391a8c576d5724c17755b7925363c8deec60d2f11531
 
 build:
-  number: 0
-  skip: true  # [win or ppc64le or py<39]
+  number: 1
+  skip: true  # [win or py<39]
   entry_points:
     - planar_hex = mpas_tools.planar_hex:main
     - translate_planar_grid = mpas_tools.translate:main
