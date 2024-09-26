@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [win or py<39]
+  skip: true  # [win]
   entry_points:
     - planar_hex = mpas_tools.planar_hex:main
     - translate_planar_grid = mpas_tools.translate:main
