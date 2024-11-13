@@ -307,6 +307,3 @@ Feedstock Maintainers
 * [@jhkennedy](https://github.com/jhkennedy/)
 * [@xylar](https://github.com/xylar/)
 
-
-<!-- dummy commit to enable rerendering -->
-
