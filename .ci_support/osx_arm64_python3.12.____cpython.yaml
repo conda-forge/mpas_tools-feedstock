@@ -13,7 +13,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '17'
+- '18'
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
@@ -23,7 +23,7 @@ hdf5:
 libnetcdf:
 - 4.9.2
 llvm_openmp:
-- '17'
+- '18'
 macos_machine:
 - arm64-apple-darwin20.0.0
 netcdf_fortran:
