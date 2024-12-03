@@ -10,7 +10,7 @@ source:
   sha256: 0dd54a4b0db3339364e46599037e4150b5f0761a1f1de9864e934b77f0435e71
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
   entry_points:
     - planar_hex = mpas_tools.planar_hex:main
