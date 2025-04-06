@@ -1,5 +1,5 @@
 {% set name = "mpas_tools" %}
-{% set version = "1.0.0rc4" %}
+{% set version = "1.0.0rc5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/{{ version }}.tar.gz
-  sha256: 5d2fc00293d5ff25db72b32ee22f65a3b6a1585c1eff0222c32e6cba7c08bfa0
+  sha256: d41436ada09112bf1cb9a5ff0d0c8e6237d89f893c19e7ba248386b10802bc2a
 
 build:
   number: 0
@@ -41,9 +41,8 @@ requirements:
     - cmocean
     - dask
     - geometric_features >=1.0.1,<2.0.0
+    - h5py
     - inpoly
-    - jigsaw >=0.9.12
-    - jigsawpy >=0.2.1
     - matplotlib-base >=3.9.0
     - netcdf4
     - numpy >=2.0,<3.0
@@ -60,9 +59,10 @@ requirements:
 
 test:
   requires:
+    - git
+    - pip
     - pytest
     - requests
-    - pip
   source_files:
     - mesh_tools/mesh_conversion_tools/test/Arctic_Ocean.geojson
     - mesh_tools/mesh_conversion_tools/test/mesh.QU.1920km.151026.nc
@@ -111,6 +111,7 @@ test:
     - ocean_add_zmid --help
     - ocean_write_time_varying_zmid --help
     - paraview_vtk_field_extractor -f mesh_tools/mesh_conversion_tools/test/mesh.QU.1920km.151026.nc -v latCell,lonCell --ignore_time -o vtk_test
+    - mpas_to_xdmf -m mesh_tools/mesh_conversion_tools/test/mesh.QU.1920km.151026.nc -v latCell lonCell -o xdmf_test
     - split_grids --help
     - merge_grids --help
     - inject_bathymetry mesh_tools/mesh_conversion_tools/test/mesh.QU.1920km.151026.nc
@@ -118,6 +119,7 @@ test:
     - mpas_to_triangle --help
     - triangle_to_netcdf --help
     - jigsaw_to_netcdf --help
+    - build_jigsaw --clone
     - scrip_from_mpas --help
     - compute_mpas_region_masks --help
     - compute_mpas_transect_masks --help
