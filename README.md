@@ -222,7 +222,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-mpas_tools-green.svg)](https://anaconda.org/conda-forge/mpas_tools) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/mpas_tools.svg)](https://anaconda.org/conda-forge/mpas_tools) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/mpas_tools.svg)](https://anaconda.org/conda-forge/mpas_tools) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/mpas_tools.svg)](https://anaconda.org/conda-forge/mpas_tools) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-mpas__tools-green.svg)](https://anaconda.org/conda-forge/mpas_tools) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/mpas_tools.svg)](https://anaconda.org/conda-forge/mpas_tools) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/mpas_tools.svg)](https://anaconda.org/conda-forge/mpas_tools) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/mpas_tools.svg)](https://anaconda.org/conda-forge/mpas_tools) |
 
 Installing mpas_tools
 =====================
