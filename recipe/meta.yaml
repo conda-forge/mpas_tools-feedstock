@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/{{ version }}.tar.gz
   sha256: a86a6fbaa10fdd4aee16608fb5b73e1584c5df2cb772a314735fe4a6bbec613a
+  patches:
+    - 0001-fix-build-jigsaw.patch
 
 build:
   number: 0
