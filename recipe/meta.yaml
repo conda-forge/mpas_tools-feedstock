@@ -1,5 +1,5 @@
 {% set name = "mpas_tools" %}
-{% set version = "1.0.0rc5" %}
+{% set version = "1.4.0rc1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/{{ version }}.tar.gz
-  sha256: d41436ada09112bf1cb9a5ff0d0c8e6237d89f893c19e7ba248386b10802bc2a
+  sha256: 7eaa558a1458ddf992a741f2c56ac08096c25a269a69248818e494b3bc7d171f
 
 build:
   number: 0
@@ -44,7 +44,9 @@ requirements:
     - h5py
     - inpoly
     - matplotlib-base >=3.9.0
+    - nco
     - netcdf4
+    - networkx
     - numpy >=2.0,<3.0
     - progressbar2
     - pyamg
@@ -55,19 +57,20 @@ requirements:
     - scikit-image !=0.20.0
     - scipy
     - shapely >=2.0,<3.0
+    - tqdm
     - xarray
 
 test:
   requires:
     - git
-    - pip
     - pytest
     - requests
+    - pip
   source_files:
     - mesh_tools/mesh_conversion_tools/test/Arctic_Ocean.geojson
     - mesh_tools/mesh_conversion_tools/test/mesh.QU.1920km.151026.nc
     - mesh_tools/mesh_conversion_tools/test/land_mask_final.nc
-    - conda_package/mpas_tools/tests/*
+    - conda_package/tests/*
   imports:
     - mpas_tools
     - mpas_tools.mesh.conversion
@@ -91,7 +94,7 @@ test:
     - MpasMaskCreator.x mesh.nc arctic_mask.nc -f mesh_tools/mesh_conversion_tools/test/Arctic_Ocean.geojson
     - planar_hex --nx=30 --ny=20 --dc=1000. --npx --npy --outFileName='nonperiodic_mesh_30x20_1km.nc'
     - MpasCellCuller.x nonperiodic_mesh_30x20_1km.nc culled_nonperiodic_mesh_30x20_1km.nc
-    - python -m pytest conda_package/mpas_tools/tests
+    - python -m pytest conda_package/tests
     - mark_horns_for_culling --help
     - set_lat_lon_fields_in_planar_grid --help
     - create_scrip_file_from_mpas_mesh --help
@@ -142,6 +145,5 @@ about:
 
 extra:
   recipe-maintainers:
-    - altheaden
     - xylar
     - jhkennedy
