@@ -16,7 +16,6 @@ Documentation: https://github.com/MPAS-Dev/MPAS-Tools/README.md
 A set of tools for creating and manipulating meshes for the climate
 components based on the Model for Prediction Across Scales (MPAS) framework
 
-
 Current build status
 ====================
 
