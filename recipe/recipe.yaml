@@ -13,7 +13,7 @@ source:
   sha256: 90732c5c46d69d148295af0f42005751dcd672c7cb126b7502a9be6aceaa409a
 
 build:
-  number: 1
+  number: 2
   skip:
     - win
 
@@ -122,7 +122,7 @@ tests:
           - mpas_to_triangle --help
           - triangle_to_netcdf --help
           - jigsaw_to_netcdf --help
-          - build_jigsaw --clone
+          - build_jigsaw --help
           - scrip_from_mpas --help
           - compute_mpas_region_masks --help
           - compute_mpas_transect_masks --help
@@ -131,7 +131,6 @@ tests:
           - compute_projection_region_masks --help
     requirements:
       run:
-        - git
         - pytest
         - requests
     files:
