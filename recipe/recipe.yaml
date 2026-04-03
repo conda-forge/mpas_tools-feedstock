@@ -2,7 +2,9 @@ schema_version: 1
 
 context:
   name: mpas_tools
-  version: 1.4.0
+  version: "1.4.0"
+  # constrained by latest netcdf4 build
+  python_min: "3.11"
 
 package:
   name: ${{ name | lower }}
