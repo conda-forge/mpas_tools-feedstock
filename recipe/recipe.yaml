@@ -3,8 +3,6 @@ schema_version: 1
 context:
   name: mpas_tools
   version: "1.4.0"
-  # constrained by latest netcdf4 build
-  python_min: "3.11"
 
 package:
   name: ${{ name | lower }}
@@ -16,8 +14,7 @@ source:
 
 build:
   number: 3
-  skip:
-    - win
+  skip: match(python, "<3.11") or win
 
 requirements:
   build:
