@@ -8,10 +8,6 @@ jobs:
     vmImage: $(VMIMAGE)
   strategy:
     matrix:
-      osx_64_hdf51.14.6python3.10.____cpython:
-        CONFIG: osx_64_hdf51.14.6python3.10.____cpython
-        UPLOAD_PACKAGES: 'True'
-        VMIMAGE: macOS-15
       osx_64_hdf51.14.6python3.11.____cpython:
         CONFIG: osx_64_hdf51.14.6python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -26,10 +22,6 @@ jobs:
         VMIMAGE: macOS-15
       osx_64_hdf51.14.6python3.14.____cp314:
         CONFIG: osx_64_hdf51.14.6python3.14.____cp314
-        UPLOAD_PACKAGES: 'True'
-        VMIMAGE: macOS-15
-      osx_64_hdf52python3.10.____cpython:
-        CONFIG: osx_64_hdf52python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
       osx_64_hdf52python3.11.____cpython:
@@ -48,10 +40,6 @@ jobs:
         CONFIG: osx_64_hdf52python3.14.____cp314
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
-      osx_arm64_hdf51.14.6python3.10.____cpython:
-        CONFIG: osx_arm64_hdf51.14.6python3.10.____cpython
-        UPLOAD_PACKAGES: 'True'
-        VMIMAGE: macOS-15
       osx_arm64_hdf51.14.6python3.11.____cpython:
         CONFIG: osx_arm64_hdf51.14.6python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -66,10 +54,6 @@ jobs:
         VMIMAGE: macOS-15
       osx_arm64_hdf51.14.6python3.14.____cp314:
         CONFIG: osx_arm64_hdf51.14.6python3.14.____cp314
-        UPLOAD_PACKAGES: 'True'
-        VMIMAGE: macOS-15
-      osx_arm64_hdf52python3.10.____cpython:
-        CONFIG: osx_arm64_hdf52python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
       osx_arm64_hdf52python3.11.____cpython:

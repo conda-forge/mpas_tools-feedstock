@@ -23,12 +23,6 @@ description = "List contents of all packages found in rattler-build build direct
 [tasks.build]
 cmd = "rattler-build build --recipe recipe"
 description = "Build mpas_tools-feedstock directly (without setup scripts), no particular variant specified"
-[tasks."build-linux_64_hdf51.14.6python3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf51.14.6python3.10.____cpython.yaml"
-description = "Build mpas_tools-feedstock with variant linux_64_hdf51.14.6python3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_64_hdf51.14.6python3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf51.14.6python3.10.____cpython.yaml"
-description = "List contents of mpas_tools-feedstock packages built for variant linux_64_hdf51.14.6python3.10.____cpython"
 [tasks."build-linux_64_hdf51.14.6python3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf51.14.6python3.11.____cpython.yaml"
 description = "Build mpas_tools-feedstock with variant linux_64_hdf51.14.6python3.11.____cpython directly (without setup scripts)"
@@ -53,12 +47,6 @@ description = "Build mpas_tools-feedstock with variant linux_64_hdf51.14.6python
 [tasks."inspect-linux_64_hdf51.14.6python3.14.____cp314"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf51.14.6python3.14.____cp314.yaml"
 description = "List contents of mpas_tools-feedstock packages built for variant linux_64_hdf51.14.6python3.14.____cp314"
-[tasks."build-linux_64_hdf52python3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf52python3.10.____cpython.yaml"
-description = "Build mpas_tools-feedstock with variant linux_64_hdf52python3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_64_hdf52python3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf52python3.10.____cpython.yaml"
-description = "List contents of mpas_tools-feedstock packages built for variant linux_64_hdf52python3.10.____cpython"
 [tasks."build-linux_64_hdf52python3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf52python3.11.____cpython.yaml"
 description = "Build mpas_tools-feedstock with variant linux_64_hdf52python3.11.____cpython directly (without setup scripts)"
@@ -83,12 +71,6 @@ description = "Build mpas_tools-feedstock with variant linux_64_hdf52python3.14.
 [tasks."inspect-linux_64_hdf52python3.14.____cp314"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf52python3.14.____cp314.yaml"
 description = "List contents of mpas_tools-feedstock packages built for variant linux_64_hdf52python3.14.____cp314"
-[tasks."build-linux_aarch64_hdf51.14.6python3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf51.14.6python3.10.____cpython.yaml"
-description = "Build mpas_tools-feedstock with variant linux_aarch64_hdf51.14.6python3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_hdf51.14.6python3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf51.14.6python3.10.____cpython.yaml"
-description = "List contents of mpas_tools-feedstock packages built for variant linux_aarch64_hdf51.14.6python3.10.____cpython"
 [tasks."build-linux_aarch64_hdf51.14.6python3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf51.14.6python3.11.____cpython.yaml"
 description = "Build mpas_tools-feedstock with variant linux_aarch64_hdf51.14.6python3.11.____cpython directly (without setup scripts)"
@@ -113,12 +95,6 @@ description = "Build mpas_tools-feedstock with variant linux_aarch64_hdf51.14.6p
 [tasks."inspect-linux_aarch64_hdf51.14.6python3.14.____cp314"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf51.14.6python3.14.____cp314.yaml"
 description = "List contents of mpas_tools-feedstock packages built for variant linux_aarch64_hdf51.14.6python3.14.____cp314"
-[tasks."build-linux_aarch64_hdf52python3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf52python3.10.____cpython.yaml"
-description = "Build mpas_tools-feedstock with variant linux_aarch64_hdf52python3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_hdf52python3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf52python3.10.____cpython.yaml"
-description = "List contents of mpas_tools-feedstock packages built for variant linux_aarch64_hdf52python3.10.____cpython"
 [tasks."build-linux_aarch64_hdf52python3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf52python3.11.____cpython.yaml"
 description = "Build mpas_tools-feedstock with variant linux_aarch64_hdf52python3.11.____cpython directly (without setup scripts)"
@@ -143,12 +119,6 @@ description = "Build mpas_tools-feedstock with variant linux_aarch64_hdf52python
 [tasks."inspect-linux_aarch64_hdf52python3.14.____cp314"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf52python3.14.____cp314.yaml"
 description = "List contents of mpas_tools-feedstock packages built for variant linux_aarch64_hdf52python3.14.____cp314"
-[tasks."build-linux_ppc64le_hdf51.14.6python3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf51.14.6python3.10.____cpython.yaml"
-description = "Build mpas_tools-feedstock with variant linux_ppc64le_hdf51.14.6python3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_hdf51.14.6python3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf51.14.6python3.10.____cpython.yaml"
-description = "List contents of mpas_tools-feedstock packages built for variant linux_ppc64le_hdf51.14.6python3.10.____cpython"
 [tasks."build-linux_ppc64le_hdf51.14.6python3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf51.14.6python3.11.____cpython.yaml"
 description = "Build mpas_tools-feedstock with variant linux_ppc64le_hdf51.14.6python3.11.____cpython directly (without setup scripts)"
@@ -173,12 +143,6 @@ description = "Build mpas_tools-feedstock with variant linux_ppc64le_hdf51.14.6p
 [tasks."inspect-linux_ppc64le_hdf51.14.6python3.14.____cp314"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf51.14.6python3.14.____cp314.yaml"
 description = "List contents of mpas_tools-feedstock packages built for variant linux_ppc64le_hdf51.14.6python3.14.____cp314"
-[tasks."build-linux_ppc64le_hdf52python3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf52python3.10.____cpython.yaml"
-description = "Build mpas_tools-feedstock with variant linux_ppc64le_hdf52python3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_hdf52python3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf52python3.10.____cpython.yaml"
-description = "List contents of mpas_tools-feedstock packages built for variant linux_ppc64le_hdf52python3.10.____cpython"
 [tasks."build-linux_ppc64le_hdf52python3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf52python3.11.____cpython.yaml"
 description = "Build mpas_tools-feedstock with variant linux_ppc64le_hdf52python3.11.____cpython directly (without setup scripts)"
@@ -203,12 +167,6 @@ description = "Build mpas_tools-feedstock with variant linux_ppc64le_hdf52python
 [tasks."inspect-linux_ppc64le_hdf52python3.14.____cp314"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf52python3.14.____cp314.yaml"
 description = "List contents of mpas_tools-feedstock packages built for variant linux_ppc64le_hdf52python3.14.____cp314"
-[tasks."build-osx_64_hdf51.14.6python3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_hdf51.14.6python3.10.____cpython.yaml"
-description = "Build mpas_tools-feedstock with variant osx_64_hdf51.14.6python3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-osx_64_hdf51.14.6python3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_hdf51.14.6python3.10.____cpython.yaml"
-description = "List contents of mpas_tools-feedstock packages built for variant osx_64_hdf51.14.6python3.10.____cpython"
 [tasks."build-osx_64_hdf51.14.6python3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_hdf51.14.6python3.11.____cpython.yaml"
 description = "Build mpas_tools-feedstock with variant osx_64_hdf51.14.6python3.11.____cpython directly (without setup scripts)"
@@ -233,12 +191,6 @@ description = "Build mpas_tools-feedstock with variant osx_64_hdf51.14.6python3.
 [tasks."inspect-osx_64_hdf51.14.6python3.14.____cp314"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_hdf51.14.6python3.14.____cp314.yaml"
 description = "List contents of mpas_tools-feedstock packages built for variant osx_64_hdf51.14.6python3.14.____cp314"
-[tasks."build-osx_64_hdf52python3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_hdf52python3.10.____cpython.yaml"
-description = "Build mpas_tools-feedstock with variant osx_64_hdf52python3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-osx_64_hdf52python3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_hdf52python3.10.____cpython.yaml"
-description = "List contents of mpas_tools-feedstock packages built for variant osx_64_hdf52python3.10.____cpython"
 [tasks."build-osx_64_hdf52python3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_hdf52python3.11.____cpython.yaml"
 description = "Build mpas_tools-feedstock with variant osx_64_hdf52python3.11.____cpython directly (without setup scripts)"
@@ -263,12 +215,6 @@ description = "Build mpas_tools-feedstock with variant osx_64_hdf52python3.14.__
 [tasks."inspect-osx_64_hdf52python3.14.____cp314"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_hdf52python3.14.____cp314.yaml"
 description = "List contents of mpas_tools-feedstock packages built for variant osx_64_hdf52python3.14.____cp314"
-[tasks."build-osx_arm64_hdf51.14.6python3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_hdf51.14.6python3.10.____cpython.yaml"
-description = "Build mpas_tools-feedstock with variant osx_arm64_hdf51.14.6python3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-osx_arm64_hdf51.14.6python3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_hdf51.14.6python3.10.____cpython.yaml"
-description = "List contents of mpas_tools-feedstock packages built for variant osx_arm64_hdf51.14.6python3.10.____cpython"
 [tasks."build-osx_arm64_hdf51.14.6python3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_hdf51.14.6python3.11.____cpython.yaml"
 description = "Build mpas_tools-feedstock with variant osx_arm64_hdf51.14.6python3.11.____cpython directly (without setup scripts)"
@@ -293,12 +239,6 @@ description = "Build mpas_tools-feedstock with variant osx_arm64_hdf51.14.6pytho
 [tasks."inspect-osx_arm64_hdf51.14.6python3.14.____cp314"]
 cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_hdf51.14.6python3.14.____cp314.yaml"
 description = "List contents of mpas_tools-feedstock packages built for variant osx_arm64_hdf51.14.6python3.14.____cp314"
-[tasks."build-osx_arm64_hdf52python3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_hdf52python3.10.____cpython.yaml"
-description = "Build mpas_tools-feedstock with variant osx_arm64_hdf52python3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-osx_arm64_hdf52python3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_hdf52python3.10.____cpython.yaml"
-description = "List contents of mpas_tools-feedstock packages built for variant osx_arm64_hdf52python3.10.____cpython"
 [tasks."build-osx_arm64_hdf52python3.11.____cpython"]
 cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_hdf52python3.11.____cpython.yaml"
 description = "Build mpas_tools-feedstock with variant osx_arm64_hdf52python3.11.____cpython directly (without setup scripts)"
