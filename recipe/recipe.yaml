@@ -13,7 +13,7 @@ source:
   sha256: ce29a81b93add6f24911511b21443ca13036a9a1427603d88210ece21bd76625
 
 build:
-  number: 3
+  number: 0
   skip: match(python, "<3.11") or win
 
 requirements:
@@ -46,7 +46,7 @@ requirements:
     - cartopy
     - cmocean
     - dask
-    - geometric_features >=1.0.1,<2.0.0
+    - geometric_features >=1.6.3,<2.0.0
     - h5py
     - inpoly
     - matplotlib-base >=3.9.0
@@ -120,8 +120,8 @@ tests:
           - inject_preserve_floodplain --help
           - mpas_to_triangle --help
           - triangle_to_netcdf --help
-          - jigsaw_to_netcdf --help
           - build_jigsaw --help
+          - jigsaw_to_netcdf --help
           - scrip_from_mpas --help
           - compute_mpas_region_masks --help
           - compute_mpas_transect_masks --help
