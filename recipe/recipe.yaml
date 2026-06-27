@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: mpas_tools
-  version: "2.0.0rc1"
+  version: "2.0.0rc2"
 
 package:
   name: ${{ name | lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/${{ version }}.tar.gz
-  sha256: a0e1710bd946f050d9e748c7993fc204dd53ebb71739afe7d4ab81f4b4b3a99e
+  sha256: 20edb64c091df3c2f58b46c2c6cc2eeeae00bb5910c759ba238f43db806d2f87
 
 build:
   number: 0
