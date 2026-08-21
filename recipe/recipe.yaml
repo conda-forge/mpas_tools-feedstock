@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: mpas_tools
-  version: "2.0.0"
+  version: "2.1.0"
 
 package:
   name: ${{ name | lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/MPAS-Dev/MPAS-Tools/archive/${{ version }}.tar.gz
-  sha256: 5ff9297873f215695f3958484244c2061d8ba05630d61dba444c55254b10ef3b
+  sha256: b23f213acee205d5c5c137f85ff1bed520061ced6b24977abfa782da960eeb0d
 
 build:
   number: 1
@@ -30,27 +30,26 @@ requirements:
     - pkgconfig
   host:
     - python
+    - pip
+    - if: osx
+      then: llvm-openmp
+    - setuptools >=60
     - hdf5
     - hdf5 * nompi_*
     - libnetcdf
     - libnetcdf * nompi_*
     - netcdf-fortran
     - netcdf-fortran * nompi_*
-    - setuptools
-    - pip
     - netcdf4
-    - if: osx
-      then: llvm-openmp
   run:
     - python
     - cartopy
     - cmocean
-    - dask
-    - geometric_features >=1.6.3,<2.0.0
+    - dask-core
     - h5py
     - inpoly
+    - jinja2
     - matplotlib-base >=3.9.0
-    - nco
     - netcdf4
     - networkx
     - numpy >=2.0,<3.0
@@ -65,6 +64,8 @@ requirements:
     - shapely >=2.0,<3.0
     - tqdm
     - xarray
+    - geometric_features >=1.6.3,<2.0.0
+    - nco
 
 tests:
   - python:
@@ -131,6 +132,7 @@ tests:
     requirements:
       run:
         - pytest
+        - pyyaml
         - requests
     files:
       source:
