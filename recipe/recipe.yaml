@@ -40,7 +40,6 @@ requirements:
     - libnetcdf * nompi_*
     - netcdf-fortran
     - netcdf-fortran * nompi_*
-    - netcdf4
   run:
     - python
     - cartopy
