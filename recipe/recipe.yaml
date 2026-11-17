@@ -56,7 +56,7 @@ requirements:
     - pyamg
     - pyevtk
     - pyproj
-    - igraph >=0.10.0
+    - python-igraph >=0.10.0
     - scikit-image !=0.20.0
     - scipy
     - shapely >=2.0,<3.0
@@ -64,8 +64,6 @@ requirements:
     - xarray
     - geometric_features >=1.6.3,<2.0.0
     - nco
-    # older python-igraph is giving me build troubles
-    - python-igraph >=0.10.0
 
 tests:
   - python:
